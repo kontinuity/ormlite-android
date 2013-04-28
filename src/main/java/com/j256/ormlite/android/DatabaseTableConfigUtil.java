@@ -158,6 +158,8 @@ public class DatabaseTableConfigUtil {
 	private static final int VERSION = 27;
 	private static final int FOREIGN_COLUMN_NAME = 28;
 	private static final int READ_ONLY = 29;
+	private static final int CONTAINER_CLASS = 30;
+	private static final int ITEM_CLASS = 31;
 
 	/**
 	 * Convert the name of the @DatabaseField fields into a number for easy processing later.
@@ -221,8 +223,12 @@ public class DatabaseTableConfigUtil {
 			return FOREIGN_COLUMN_NAME;
 		} else if (configName.equals("readOnly")) {
 			return READ_ONLY;
+		} else if (configName.equals("containerClass")) {
+			return CONTAINER_CLASS;
+		} else if (configName.equals("itemClass")) {
+			return ITEM_CLASS;
 		} else {
-			throw new IllegalStateException("Could not find support for DatabaseField " + configName);
+			throw new IllegalStateException("Could not find support for DatabaseField [" + configName + "]");
 		}
 	}
 
@@ -388,6 +394,16 @@ public class DatabaseTableConfigUtil {
 			case READ_ONLY :
 				config.setReadOnly((Boolean) value);
 				break;
+            case CONTAINER_CLASS :
+                @SuppressWarnings("unchecked")
+                Class<?> containerClazz = (Class<?>) value;
+                config.setContainerClass(containerClazz);
+                break;
+            case ITEM_CLASS :
+                @SuppressWarnings("unchecked")
+                Class<?> itemClazz = (Class<?>) value;
+                config.setItemClass(itemClazz);
+                break;
 			default :
 				throw new IllegalStateException("Could not find support for DatabaseField number " + configNum);
 		}

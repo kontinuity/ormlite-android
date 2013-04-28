@@ -277,6 +277,8 @@
 			<groupId>com.j256.ormlite</groupId>
 			<artifactId>ormlite-core</artifactId>
 			<version>${ormlite-version}</version>
+            <scope>system</scope>
+            <systemPath>/Users/cruiser/work/awsconsole/android/app/libs/ormlite-core-4.45.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>com.google.android</groupId>
@@ -292,7 +294,8 @@
 			<artifactId>ormlite-core</artifactId>
 			<version>${ormlite-version}</version>
 			<classifier>tests</classifier>
-			<scope>test</scope>
+			<scope>system</scope>
+            <systemPath>/Users/cruiser/work/awsconsole/android/app/libs/ormlite-core-4.45.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>commons-logging</groupId>
