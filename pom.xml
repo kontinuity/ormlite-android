@@ -74,7 +74,7 @@
 		</profile>
 	</profiles>
 	<build>
-		<finalName>ormlite-android</finalName>
+		<finalName>ormlite-android-awsmc-${version}</finalName>
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
@@ -180,7 +180,7 @@
 				<executions>
 					<execution>
 						<id>sign-artifacts</id>
-						<phase>${gpgPhase}</phase>
+						<phase>verify</phase>
 						<goals>
 							<goal>sign</goal>
 						</goals>
@@ -201,8 +201,8 @@
 				<version>1.5.0</version>
 				<executions>
 					<execution>
-						<id>validate</id>
-						<phase>validate</phase>
+						<id>compile</id>
+						<phase>compile</phase>
 						<goals>
 							<goal>replace</goal>
 						</goals>
@@ -278,7 +278,7 @@
 			<artifactId>ormlite-core</artifactId>
 			<version>${ormlite-version}</version>
             <scope>system</scope>
-            <systemPath>/Users/cruiser/work/awsconsole/android/app/libs/ormlite-core-4.45.jar</systemPath>
+            <systemPath>${project.basedir}/../ormlite-core/target/ormlite-core-awsmc-4.49-SNAPSHOT.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>com.google.android</groupId>
