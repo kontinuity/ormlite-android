@@ -74,7 +74,7 @@
 		</profile>
 	</profiles>
 	<build>
-		<finalName>ormlite-android-awsmc-${version}</finalName>
+		<finalName>ormlite-android-awsmc-${project.version}</finalName>
 		<resources>
 			<resource>
 				<directory>src/main/resources</directory>
@@ -278,7 +278,7 @@
 			<artifactId>ormlite-core</artifactId>
 			<version>${ormlite-version}</version>
             <scope>system</scope>
-            <systemPath>${project.basedir}/../ormlite-core/target/ormlite-core-awsmc-4.49-SNAPSHOT.jar</systemPath>
+            <systemPath>${project.basedir}/../ormlite-core/target/ormlite-core-awsmc-${project.version}.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>com.google.android</groupId>
@@ -295,7 +295,7 @@
 			<version>${ormlite-version}</version>
 			<classifier>tests</classifier>
 			<scope>system</scope>
-            <systemPath>/Users/cruiser/work/awsconsole/android/app/libs/ormlite-core-4.45.jar</systemPath>
+            <systemPath>${project.basedir}/../ormlite-core/target/ormlite-core-awsmc-${project.version}.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>commons-logging</groupId>
